@@ -1,5 +1,5 @@
-select count(*) AS total_shipper from shipper;
-b)Find cargo name from cargo table whose name exists ‘gis’ or ‘GIS’ as a substring:
-select cargo_name from cargo where cargo_name LIKE '%gis%' OR cargo_name LIKE '%GIS%';
-c)Find details of all shipper by sorting their name in descending order:
-select * from shipper ORDER BY shipper_name DESC;
+select count(*) AS taxi from taxi;
+b)Find driver name name from cargo table whose name exists ‘gis’ or ‘GIS’ as a substring:
+select taxi_number from taxi where  taxi_number LIKE '%gis%' OR  taxi_number LIKE '%GIS%';
+c)Find details of all driver by sorting their name in descending order:
+select * from driver ORDER BY driver_name DESC;
