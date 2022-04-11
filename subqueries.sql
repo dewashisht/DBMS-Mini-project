@@ -1,20 +1,19 @@
-select shipper_name from shipper where branch_id IN(select branch_id from branch where 
-branch_name IN('Chittagong_branch','Dhaka_branch'));
-b)Find cargo name and branch id from cargo and branch table if branch id of those tables are 
-same and branch id of branch table is greater than the branch id of the cosignee with id 502:
-select cargo.cargo_name,branch.branch_id from cargo,branch where 
-cargo.branch_id=branch.branch_id and branch.branch_id>
-(select branch_id from consignee where consignee_id=502);
-c)Find consignee name from consignee whose order id are not exists in those shipper_id whose 
+
+a)Find driver name and branch id from car and city table if city id of those tables are 
+same and city id of city table is greater than the city id of the taxi with id 502:
+
+select taxi.taxi_name,taxi.city_id from taxi,city where 
+(select city_id from customer where customer_id=502);
+
+b)Find customer name from customer whose customer id are not exists in those driver_id whose 
 branch id is greater than or equal to 303:
-select consignee_name from consignee where order_no NOT IN(select shipper_id from shipper 
-where branch_id>=303);
-d)Find branch name,branch id from branch table whose branch id is less than the branch id of 
-'ANCHOR LOGISTICS' cargo:
-select branch_name,branch_id from branch where branch_id<(select branch_id from cargo 
-where cargo_name='ANCHOR LOGISTICS');
-e)Find details of those shipper from shipper table whose shipper id lies between the booking id 
-of 'Fit Logistic Limited' and 'FAMOUS CARGO LINE' cargo:
-select * from shipper where shipper_id BETWEEN (select booking_id from cargo where 
-cargo_name='Fit Logistic Limited')AND(select booking_id from cargo where 
-cargo_name='FAMOUS CARGO LINE');
+select customer_name from customer where order_no NOT IN(select driver_id from driver
+where city_id>=303);
+
+
+
+c)Find details of those driver from driver table whose driver id lies between the city id 
+of 'Delhi' and 'Mumbai' city:
+select * from shipper where driver_id BETWEEN (select city_id from city where 
+city_name='Delhi')AND(select driver_id from  where 
+cargo_name='Mumbai');
